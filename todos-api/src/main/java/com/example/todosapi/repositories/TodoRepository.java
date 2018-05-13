@@ -6,7 +6,11 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 
 public interface TodoRepository extends CrudRepository<Todos, Long> {
+
+@Override()
+@Query("SELECT t FROM Todos t WHERE t.done=false")
+Iterable<Todos> findAll();
 @Query("SELECT t FROM Todos t WHERE LOWER(t.title) LIKE LOWER(CONCAT('%',:title,'%'))")
-Iterable<Todos> findSongsBytitle(@Param("title") String title);
+Iterable<Todos> findTodosBytitle(@Param("title") String title);
 
 }

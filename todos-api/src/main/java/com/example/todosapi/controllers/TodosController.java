@@ -37,7 +37,7 @@ public class TodosController {
     }
     @GetMapping("/search/{title}")
     public Iterable<Todos> findByTitle(@PathVariable String title){
-        return todoRepository.findSongsBytitle(title);
+        return todoRepository.findTodosBytitle(title);
 
     }
 
