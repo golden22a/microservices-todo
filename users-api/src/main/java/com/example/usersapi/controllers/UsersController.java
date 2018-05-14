@@ -17,7 +17,7 @@ public class UsersController {
     public User findUserById(@PathVariable Long userId) {
         return userRepository.findOne(userId);
     }
-    @DeleteMapping("/users/{userId}")
+    @DeleteMapping("/{userId}")
     public HttpStatus deleteUserById(@PathVariable Long userId) {
         userRepository.delete(userId);
         return HttpStatus.OK;
@@ -31,7 +31,6 @@ public class UsersController {
 
         User userFromDb = userRepository.findOne(userId);
 
-        userFromDb.setUserName(userRequest.getUserName());
         userFromDb.setFirstName(userRequest.getFirstName());
         userFromDb.setLastName(userRequest.getLastName());
 

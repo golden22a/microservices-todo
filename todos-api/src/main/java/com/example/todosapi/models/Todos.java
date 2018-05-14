@@ -20,6 +20,8 @@ public class Todos {
 
     @Column(name = "done")
     private boolean done;
+    @Column(name = "user_id")
+    private Long user_id;
 
 
 }

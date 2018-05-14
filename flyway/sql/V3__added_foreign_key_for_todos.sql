@@ -4,4 +4,4 @@
  ALTER TABLE todos
    ADD CONSTRAINT fk_todos
    FOREIGN KEY (user_id)
-   REFERENCES users(ID);
+   REFERENCES users(ID) ON DELETE CASCADE;
